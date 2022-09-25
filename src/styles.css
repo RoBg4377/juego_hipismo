@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+.cuerpo {
+  background-color: antiquewhite;
+}
+li {
+  list-style: none;
+  margin-top: 1rem;
+}
+.contenedorApuesta {
+  background-image: url(src/assets/paisley.webp);
+  padding: 1rem 2rem;
+  border: solid 2px red;
+  border-radius: 20px;
+}
+.radio {
+  background-color: blueviolet;
+}

@@ -1,0 +1,51 @@
+<div class="contenedorApuesta">
+  <nav class="navbar bg-warning">
+    <div class="container-fluid"><h2>¡Hoy gran carrera!</h2></div>
+  </nav>
+<br>
+<div>
+  <p>Tenés: ${{tuDinero}} para apostar a los caballos</p>
+  <p>¿Quieres apostar?</p>
+  <span>Si: </span> <input class="form-check-input radio" type="radio" name="apostar" id="si" value="si" (click)="aceptar($event)"><br>
+  <span>No: </span> <input class="form-check-input radio" type="radio" name="apostar" id="no" value="no" (click)="aceptar($event)">
+</div>
+<h5>Haz tu apuesta</h5>
+<div class="row">
+  <div class="form-floating mb-3 col">
+    <input class="form-control"  type="number" name="" id="floatingInput" max="5" min="1" [disabled]="juega" [(ngModel)]="tuCaballo">
+    <label for="floatingInput">Elige un caballo: </label>
+  </div>
+  <br>
+  <br>
+  <div class="form-floating mb-3 col">
+    <input class="form-control" type="number" name="" id="floatingInput" max="110" min="0" [disabled]="juega" [(ngModel)]="tuApuesta">
+    <label for="floatingInput">Tu apuesta</label>
+  </div>
+</div>
+<dir class="row">
+  <div class="col">
+  <button class="btn btn-success" type="buton" (click)="arrancan()" [disabled]="juega" >COMIENZA LA CARRERA</button>
+</div>
+<div class="col">
+  <button class="btn btn-warning" type="buton"  data-bs-toggle="collapse" data-bs-target="#resultados" aria-expanded="false" aria-controls="resultados">RESULTADO</button>
+</div>
+</dir>
+
+
+<div class="colapse" id="resultados">
+  <div *ngIf="mostrarGanador">
+  <h4>Resultado</h4>
+  <p> El caballo ganador es: <strong>con el numero: {{ganador + 1}}...</strong> <strong>{{caballo[ganador].nombre}}</strong>
+
+  <div *ngIf="ganaste">
+    <p >!Ganaste¡... Ahora tenes {{tuDinero}}</p>
+  </div>
+  <div *ngIf="perdiste">
+    <p >!perdiste¡... Ahora tenes {{tuDinero}}</p>
+</div>
+  </div>
+</div>
+</div>
+
+
+

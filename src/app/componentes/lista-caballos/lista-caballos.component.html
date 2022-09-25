@@ -1,0 +1,12 @@
+<div class="d-grid gap-2">
+  <ul *ngFor="let caballo of caballos; let i= index">
+    <li>
+      <div class="d-grid gap-2">
+        <button class="btn btn-outline-danger" type="button">
+        <span><strong>{{i + 1}} </strong>{{caballo.nombre}}</span> 
+        </button>
+      </div>
+      
+  </li>
+  </ul>
+</div>
